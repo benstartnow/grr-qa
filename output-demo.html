@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>股市真规则 · 问答输出形态预览</title>
+<style>
+  :root{
+    --bg:#0d0f14; --card:#141414; --card2:#1a1c22; --line:#26282f;
+    --acc:#e8c87a; --acc2:#c9a85c; --txt:#e6e8ec; --mut:#8a8f98;
+    --up:#ff4d4f; --down:#52c41a; --warn:#e8a87c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7;padding:28px 16px 60px}
+  .wrap{max-width:760px;margin:0 auto}
+  h1{color:var(--acc);font-size:24px;letter-spacing:1px;text-align:center;margin-bottom:6px}
+  .sub{text-align:center;color:var(--mut);font-size:13px;margin-bottom:28px}
+  .fmt-tag{display:inline-block;background:var(--acc);color:#0d0f14;font-size:12px;font-weight:700;padding:2px 10px;border-radius:4px;margin:34px 0 14px}
+  .fmt-desc{color:var(--mut);font-size:12.5px;margin-bottom:14px}
+
+  /* ① 单张知识点卡 */
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 22px 20px;position:relative;overflow:hidden}
+  .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--acc),var(--acc2))}
+  .card h3{color:var(--acc);font-size:18px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+  .pill{font-size:11px;color:var(--mut);border:1px solid var(--line);padding:1px 8px;border-radius:20px}
+  .card p{font-size:14px;color:var(--txt);margin:8px 0}
+  .kv{display:flex;gap:10px;margin:10px 0;font-size:13.5px}
+  .kv .k{color:var(--acc2);min-width:84px;flex-shrink:0}
+  .kv .v{color:var(--txt)}
+  .src{margin-top:14px;font-size:12px;color:var(--mut);border-top:1px dashed var(--line);padding-top:10px}
+  .src b{color:var(--acc2)}
+
+  /* ② 问答对卡片 */
+  .qa{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+  .q{color:var(--txt);font-size:15px;font-weight:600;margin-bottom:12px;display:flex;gap:8px}
+  .q .mark{color:var(--acc);font-weight:800}
+  .a{font-size:14px;color:var(--txt)}
+  .a .hl{color:var(--acc)}
+  .tagrow{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
+  .tag{font-size:11.5px;background:var(--card2);border:1px solid var(--line);color:var(--mut);padding:3px 10px;border-radius:20px}
+
+  /* ③ 对比表卡 */
+  .cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:13px;margin-top:4px}
+  .cmp th,.cmp td{border:1px solid var(--line);padding:11px 12px;text-align:left;vertical-align:top}
+  .cmp th{background:var(--card2);color:var(--acc);font-weight:700}
+  .cmp td.good{color:var(--down)}
+  .cmp td.bad{color:var(--up)}
+  .cmp caption{color:var(--mut);font-size:12px;padding:8px;text-align:left}
+
+  /* ④ 系列长图 */
+  .series .step{display:flex;gap:14px;margin:0 0 14px;align-items:flex-start}
+  .series .num{flex-shrink:0;width:30px;height:30px;background:var(--acc);color:#0d0f14;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
+  .series .body{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;flex:1}
+  .series .body b{color:var(--acc)}
+  .footer{text-align:center;color:var(--mut);font-size:11.5px;margin-top:40px;border-top:1px solid var(--line);padding-top:18px}
+  .footer .gold{color:var(--acc2)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>股市真规则 · 问答输出形态预览</h1>
+  <div class="sub">黑金风 · 全部结论可溯源到概念卡片库（第 X 章 / 概念 Y）</div>
+
+  <!-- ① -->
+  <div class="fmt-tag">形态 ① · 单张知识点卡</div>
+  <div class="fmt-desc">一个概念一图流，适合收藏。下方以「护城河·成本优势」为例。</div>
+  <div class="card">
+    <h3>护城河 · 成本优势 <span class="pill">第 3 章</span></h3>
+    <p>公司能持续以<b style="color:var(--acc)">低于对手的成本</b>生产同样产品，从而要么降价抢份额、要么维持高价吃利润，竞争对手难以追赶。</p>
+    <div class="kv"><span class="k">典型来源</span><span class="v">规模效应、独特地理位置、专有流程/专利权</span></div>
+    <div class="kv"><span class="k">快速检验</span><span class="v">毛利率长期高于同行且稳定；单位成本随产量下降</span></div>
+    <div class="kv"><span class="k">常见误区</span><span class="v">「规模大」≠成本优势，需看单位经济是否真更优</span></div>
+    <div class="src">来源：概念卡片 <b>护城河-成本优势</b> · 出自《股市真规则》第 3 章（基于公开读书笔记整理）</div>
+  </div>
+
+  <!-- ② -->
+  <div class="fmt-tag">形态 ② · 问答对卡片</div>
+  <div class="fmt-desc">问题→回答+出处，适合粉丝互动 / 评论区答疑款。</div>
+  <div class="qa">
+    <div class="q"><span class="mark">Q</span><span>高分红算不算护城河？</span></div>
+    <div class="a">不算。<span class="hl">护城河真实来源只有四类</span>：无形资产、高转换成本、网络效应、成本优势（晨星补第五类「有效规模」）。分红是利润分配行为，<b>不是阻挡竞争者的结构性壁垒</b>。高分红可能<span class="hl">来自</span>护城河（现金牛公司），但本身不是护城河。真正检验是<span class="hl">定价权</span>：能每年涨价 2–3% 且客户不离弃，才有真护城河。</div>
+    <div class="tagrow">
+      <span class="tag">#护城河</span>
+      <span class="tag">#误区</span>
+      <span class="tag">第 3 章</span>
+      <span class="tag">卡片 3.4</span>
+    </div>
+  </div>
+
+  <!-- ③ -->
+  <div class="fmt-tag">形态 ③ · 对比表卡</div>
+  <div class="fmt-desc">清单向，适合「一图分清 X 和 Y」。下方为真护城河 vs 伪护城河。</div>
+  <div class="card">
+    <table class="cmp">
+      <caption>真护城河 vs 伪护城河（第 3–4 章）</caption>
+      <thead><tr><th>维度</th><th>真护城河 ✅</th><th>伪护城河 ❌</th></tr></thead>
+      <tbody>
+        <tr><td>定价权</td><td class="good">能持续涨价且客户不离弃</td><td class="bad">靠降价保份额，毛利被卷低</td></tr>
+        <tr><td>高市占率</td><td class="good">份额+高 ROIC 共存</td><td class="bad">份额高但 ROIC 平庸（无壁垒）</td></tr>
+        <tr><td>技术领先</td><td class="good">专利+持续迭代壁垒</td><td class="bad">易被颠覆，领先仅暂时</td></tr>
+        <tr><td>优秀管理</td><td class="good">放大既有壁垒</td><td class="bad">管理本身不是护城河</td></tr>
+      </tbody>
+    </table>
+    <div class="src">来源：概念卡片 <b>护城河-伪护城河陷阱</b> · 卡片 3.5</div>
+  </div>
+
+  <!-- ④ -->
+  <div class="fmt-tag">形态 ④ · 系列长图（投教流）</div>
+  <div class="fmt-desc">多个相关概念串成一篇，完读率高。下方以「十分钟测试四步」为例。</div>
+  <div class="series">
+    <div class="step"><div class="num">1</div><div class="body"><b>看收益性</b>：ROIC 是否持续 &gt; 加权平均资本成本？这是护城河的第一道筛子。</div></div>
+    <div class="step"><div class="num">2</div><div class="body"><b>看财务特征</b>：自由现金流 / 销售收入、净资产收益率是否稳定且为正。</div></div>
+    <div class="step"><div class="num">3</div><div class="body"><b>看成长性</b>：增长来自内生还是靠融资？警惕「为增长而增长」。</div></div>
+    <div class="step"><div class="num">4</div><div class="body"><b>看风险与定价</b>：负债率、空头情形、当前估值是否有安全边际。</div></div>
+  </div>
+  <div class="src" style="font-size:12px;color:var(--mut)">来源：概念卡片 <b>十分钟测试</b> · 出自第 2 章 + 第 7–11 章（基于公开读书笔记整理）</div>
+
+  <div class="footer">本页所有结论由 <span class="gold">grr-qa</span> 基于《股市真规则》概念卡片库生成 · 仅讲方法、不荐个股 · 数据/观点以原书与公开资料为准</div>
+</div>
+</body>
+</html>
